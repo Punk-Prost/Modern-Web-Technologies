@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest — Каталог книг</title>
+</head>
+<body>
+<header>
+    <p><strong>BookNest</strong></p>
+    <nav aria-label="Основная навигация">
+        <a href="lab1.html">Каталог</a>
+        <a href="lab1.2.html">Книга</a>
+        <a href="lab1.3.html">Выдача книги</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Каталог книг</h1>
+
+    <section aria-labelledby="filters-title">
+        <h2 id="filters-title">Поиск и фильтры</h2>
+        <form action="#" method="get">
+            <p>
+                <label for="search">Поиск книги:</label>
+                <input type="search" id="search" name="search" maxlength="100"
+                       placeholder="Название или автор">
+            </p>
+
+            <p>
+                <label for="genre">Жанр:</label>
+                <select id="genre" name="genre">
+                    <option value="">Все жанры</option>
+                    <option value="classic">Классика</option>
+                    <option value="fantasy">Фэнтези</option>
+                    <option value="science">Научная литература</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="sort">Сортировка:</label>
+                <select id="sort" name="sort">
+                    <option value="title">По названию</option>
+                    <option value="author">По автору</option>
+                    <option value="year">По году</option>
+                </select>
+            </p>
+
+            <p>
+                <input type="checkbox" id="available" name="available">
+                <label for="available">Только доступные</label>
+            </p>
+
+            <button type="submit">Применить</button>
+        </form>
+    </section>
+
+    <section aria-labelledby="books-title">
+        <h2 id="books-title">Книги</h2>
+
+        <article>
+            <h3><a href="lab1.2.html">Мастер и Маргарита</a></h3>
+            <figure>
+                <img src="https://placehold.co/180x260?text=Book" width="180" height="260"
+                     alt="Обложка книги Мастер и Маргарита">
+                <figcaption>Михаил Булгаков</figcaption>
+            </figure>
+            <p>Жанр: классика. Год издания: <time datetime="1967">1967</time>.</p>
+            <p>Статус: доступна.</p>
+        </article>
+
+        <article>
+            <h3>Преступление и наказание</h3>
+            <figure>
+                <img src="https://placehold.co/180x260?text=Book" width="180" height="260"
+                     alt="Обложка книги Преступление и наказание">
+                <figcaption>Фёдор Достоевский</figcaption>
+            </figure>
+            <p>Жанр: классика. Год издания: <time datetime="1866">1866</time>.</p>
+            <p>Статус: доступна.</p>
+        </article>
+
+        <article>
+            <h3>1984</h3>
+            <figure>
+                <img src="https://placehold.co/180x260?text=Book" width="180" height="260"
+                     alt="Обложка книги 1984">
+                <figcaption>Джордж Оруэлл</figcaption>
+            </figure>
+            <p>Жанр: антиутопия. Год издания: <time datetime="1949">1949</time>.</p>
+            <p>Статус: выдана.</p>
+        </article>
+    </section>
+
+    <aside>
+        <h2>Информация</h2>
+        <p>В каталоге можно найти книгу, посмотреть её описание и перейти к оформлению выдачи.</p>
+    </aside>
+</main>
+
+<footer>
+    <p>BookNest — учебный проект по веб-технологиям.</p>
+</footer>
+</body>
+</html>

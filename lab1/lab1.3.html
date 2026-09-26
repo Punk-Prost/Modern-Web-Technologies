@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest — Выдача книги</title>
+</head>
+<body>
+<header>
+    <p><strong>BookNest</strong></p>
+    <nav aria-label="Основная навигация">
+        <a href="lab1.html">Каталог</a>
+        <a href="lab1.2.html">Книга</a>
+        <a href="lab1.3.html" aria-current="page">Выдача книги</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Оформление выдачи книги</h1>
+
+    <section aria-labelledby="selected-book-title">
+        <h2 id="selected-book-title">Выбранная книга</h2>
+        <article>
+            <h3>Мастер и Маргарита</h3>
+            <p>Автор: Михаил Булгаков.</p>
+            <p>Статус: доступна.</p>
+        </article>
+    </section>
+
+    <section aria-labelledby="form-title">
+        <h2 id="form-title">Данные читателя</h2>
+
+        <form action="#" method="post">
+            <p>
+                <label for="full-name">ФИО:</label>
+                <input type="text" id="full-name" name="full_name"
+                       required minlength="3" maxlength="100">
+            </p>
+
+            <p>
+                <label for="email">Электронная почта:</label>
+                <input type="email" id="email" name="email"
+                       required maxlength="100">
+            </p>
+
+            <p>
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone"
+                       required pattern="[+0-9 ()-]{10,20}"
+                       maxlength="20" placeholder="+7 777 123 45 67">
+            </p>
+
+            <p>
+                <label for="ticket">Номер читательского билета:</label>
+                <input type="text" id="ticket" name="ticket"
+                       required pattern="[A-Za-zА-Яа-я0-9-]{3,20}"
+                       maxlength="20">
+            </p>
+
+            <p>
+                <label for="issue-date">Дата выдачи:</label>
+                <input type="date" id="issue-date" name="issue_date" required>
+            </p>
+
+            <p>
+                <label for="days">Срок выдачи, дней:</label>
+                <input type="number" id="days" name="days"
+                       required min="1" max="30" value="14">
+            </p>
+
+            <p>
+                <label for="comment">Комментарий:</label><br>
+                <textarea id="comment" name="comment" maxlength="300"
+                          rows="5" cols="40"></textarea>
+            </p>
+
+            <p>
+                <input type="checkbox" id="agreement" name="agreement" required>
+                <label for="agreement">Я согласен с правилами выдачи книги</label>
+            </p>
+
+            <button type="submit">Оформить выдачу</button>
+            <button type="reset">Очистить форму</button>
+        </form>
+    </section>
+
+    <aside>
+        <h2>Важно</h2>
+        <p>Поля с обязательной проверкой должны быть заполнены перед отправкой формы.</p>
+    </aside>
+</main>
+
+<footer>
+    <p><a href="lab1.2.html">Назад к книге</a></p>
+    <p>BookNest — учебный проект по веб-технологиям.</p>
+</footer>
+</body>
+</html>

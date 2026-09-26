@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest — Мастер и Маргарита</title>
+</head>
+<body>
+<header>
+    <p><strong>BookNest</strong></p>
+    <nav aria-label="Основная навигация">
+        <a href="lab1.html">Каталог</a>
+        <a href="lab1.2.html" aria-current="page">Книга</a>
+        <a href="lab1.3.html">Выдача книги</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Мастер и Маргарита</h1>
+
+    <article>
+        <figure>
+            <img src="https://placehold.co/240x350?text=Book" width="240" height="350"
+                 alt="Обложка книги Мастер и Маргарита">
+            <figcaption>Роман Михаила Булгакова</figcaption>
+        </figure>
+
+        <section aria-labelledby="description-title">
+            <h2 id="description-title">Описание</h2>
+            <p>
+                Роман, в котором переплетаются события в Москве, история Мастера
+                и Маргариты и философская сюжетная линия.
+            </p>
+        </section>
+
+        <section aria-labelledby="details-title">
+            <h2 id="details-title">Сведения о книге</h2>
+            <dl>
+                <dt>Автор</dt>
+                <dd>Михаил Булгаков</dd>
+
+                <dt>Жанр</dt>
+                <dd>Роман, классика</dd>
+
+                <dt>Год публикации</dt>
+                <dd><time datetime="1967">1967</time></dd>
+
+                <dt>Язык</dt>
+                <dd>Русский</dd>
+
+                <dt>Статус</dt>
+                <dd>Доступна</dd>
+            </dl>
+        </section>
+
+        <section aria-labelledby="issue-title">
+            <h2 id="issue-title">Получить книгу</h2>
+            <p><a href="lab1.3.html">Перейти к оформлению выдачи</a></p>
+        </section>
+    </article>
+
+    <aside>
+        <h2>Правила библиотеки</h2>
+        <p>Перед оформлением проверьте данные книги и укажите корректные данные читателя.</p>
+    </aside>
+</main>
+
+<footer>
+    <p><a href="lab1.html">Вернуться в каталог</a></p>
+    <p>BookNest — учебный проект по веб-технологиям.</p>
+</footer>
+</body>
+</html>
