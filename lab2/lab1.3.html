@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookNest — Выдача книги</title>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+
+<body class="page">
+
+<!-- Шапка -->
+<header class="site-header">
+
+    <div class="container site-header__inner">
+
+        <strong class="brand">
+            BookNest
+        </strong>
+
+        <nav class="nav" aria-label="Основная навигация">
+
+            <a class="nav__link" href="lab1.html">
+                Каталог
+            </a>
+
+            <a class="nav__link" href="lab1.2.html">
+                Книга
+            </a>
+
+            <a class="nav__link" href="lab1.3.html">
+                Выдача
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container page__main">
+
+    <h1>Оформление выдачи</h1>
+
+    <div class="form-layout">
+
+        <!-- Выбранная книга -->
+        <section class="content-card">
+
+            <h2>Выбранная книга</h2>
+
+            <article>
+
+                <img
+                        class="detail-image"
+                        src="images/clean-code.jpg"
+                        width="360"
+                        height="520"
+                        alt="Обложка книги Чистый код"
+                >
+
+                <h3>Чистый код</h3>
+
+                <p>
+                    Автор: Роберт Мартин
+                </p>
+
+                <p>
+                    Направление: программирование
+                </p>
+
+                <p class="status">
+                    Доступна
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- Форма -->
+        <section class="content-card">
+
+            <h2>Данные читателя</h2>
+
+            <form class="form">
+
+                <!-- ФИО -->
+                <label for="name">
+                    ФИО
+                </label>
+
+                <input
+                        class="form__control"
+                        id="name"
+                        name="full_name"
+                        type="text"
+                        required
+                        minlength="3"
+                        maxlength="100"
+                        placeholder="Иванов Иван Иванович"
+                >
+
+
+                <!-- E-mail -->
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                        class="form__control"
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="example@mail.com"
+                >
+
+
+                <!-- Телефон -->
+                <label for="phone">
+                    Телефон
+                </label>
+
+                <input
+                        class="form__control"
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        pattern="[+0-9 ()-]{10,20}"
+                        placeholder="+7 777 123 45 67"
+                >
+
+
+                <!-- Читательский билет -->
+                <label for="ticket">
+                    Номер читательского билета
+                </label>
+
+                <input
+                        class="form__control"
+                        id="ticket"
+                        name="ticket"
+                        type="text"
+                        required
+                        pattern="[A-Za-zА-Яа-я0-9-]{3,20}"
+                        placeholder="BN-001"
+                >
+
+
+                <!-- Дата -->
+                <label for="date">
+                    Дата выдачи
+                </label>
+
+                <input
+                        class="form__control"
+                        id="date"
+                        name="date"
+                        type="date"
+                        required
+                >
+
+
+                <!-- Срок -->
+                <label for="days">
+                    Срок выдачи, дней
+                </label>
+
+                <input
+                        class="form__control"
+                        id="days"
+                        name="days"
+                        type="number"
+                        min="1"
+                        max="30"
+                        value="14"
+                        required
+                >
+
+
+                <!-- Комментарий -->
+                <label for="comment">
+                    Комментарий
+                </label>
+
+                <textarea
+                        class="form__control"
+                        id="comment"
+                        name="comment"
+                        maxlength="300"
+                        rows="5"
+                        placeholder="Дополнительный комментарий"
+                ></textarea>
+
+
+                <!-- Согласие -->
+                <label class="check">
+
+                    <input
+                            name="agreement"
+                            type="checkbox"
+                            required
+                    >
+
+                    Я согласен с правилами библиотеки
+
+                </label>
+
+
+                <!-- Кнопки -->
+                <div class="actions">
+
+                    <button
+                            class="button"
+                            type="submit"
+                    >
+                        Оформить выдачу
+                    </button>
+
+                    <button
+                            class="button button--secondary"
+                            type="reset"
+                    >
+                        Очистить
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <aside class="info-box">
+
+        <h2>Условия выдачи</h2>
+
+        <p>
+            Максимальный срок выдачи книги — 30 дней.
+            После оформления книга будет закреплена за читателем.
+        </p>
+
+    </aside>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container">
+        BookNest — библиотека книг по программированию
+    </div>
+
+</footer>
+
+</body>
+
+</html>

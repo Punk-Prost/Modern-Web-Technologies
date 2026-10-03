@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookNest — Каталог книг</title>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+
+<body class="page">
+
+<!-- Шапка -->
+<header class="site-header">
+
+    <div class="container site-header__inner">
+
+        <strong class="brand">
+            BookNest
+        </strong>
+
+        <nav class="nav" aria-label="Основная навигация">
+
+            <a
+                    class="nav__link"
+                    href="lab1.html"
+            >
+                Каталог
+            </a>
+
+            <a
+                    class="nav__link"
+                    href="lab1.2.html"
+            >
+                Книга
+            </a>
+
+            <a
+                    class="nav__link"
+                    href="lab1.3.html"
+            >
+                Выдача
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- Основной контент -->
+<main class="container page__main">
+
+    <h1>Каталог книг по программированию</h1>
+
+
+    <div class="catalog-layout">
+
+        <!-- Фильтры -->
+        <section class="filter-panel">
+
+            <h2>Фильтры</h2>
+
+            <form
+                    class="form"
+                    id="filter-form"
+            >
+
+                <!-- Поиск -->
+                <label for="search">
+                    Поиск
+                </label>
+
+                <input
+                        class="form__control"
+                        id="search"
+                        name="search"
+                        type="search"
+                        maxlength="100"
+                        placeholder="Название книги или автор"
+                >
+
+
+                <!-- Направление -->
+                <label for="category">
+                    Направление
+                </label>
+
+                <select
+                        class="form__control"
+                        id="category"
+                        name="category"
+                >
+
+                    <option value="all">
+                        Все направления
+                    </option>
+
+                    <option value="programming">
+                        Программирование
+                    </option>
+
+                    <option value="python">
+                        Python
+                    </option>
+
+                    <option value="javascript">
+                        JavaScript
+                    </option>
+
+                    <option value="web">
+                        Веб-разработка
+                    </option>
+
+                    <option value="algorithms">
+                        Алгоритмы
+                    </option>
+
+                    <option value="database">
+                        Базы данных
+                    </option>
+
+                    <option value="git">
+                        Git
+                    </option>
+
+                </select>
+
+
+                <!-- Сортировка -->
+                <label for="sort">
+                    Сортировка
+                </label>
+
+                <select
+                        class="form__control"
+                        id="sort"
+                        name="sort"
+                >
+
+                    <option value="default">
+                        По умолчанию
+                    </option>
+
+                    <option value="title-asc">
+                        Название А–Я
+                    </option>
+
+                    <option value="title-desc">
+                        Название Я–А
+                    </option>
+
+                    <option value="author">
+                        По автору
+                    </option>
+
+                </select>
+
+
+                <!-- Доступность -->
+                <label class="check">
+
+                    <input
+                            id="available"
+                            name="available"
+                            type="checkbox"
+                    >
+
+                    Только доступные
+
+                </label>
+
+
+                <!-- Кнопки -->
+                <button
+                        class="button"
+                        type="submit"
+                >
+                    Применить
+                </button>
+
+                <button
+                        class="button button--secondary"
+                        id="reset-filters"
+                        type="button"
+                >
+                    Сбросить
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Каталог -->
+        <section>
+
+            <h2>Книги</h2>
+
+            <p
+                    id="result-count"
+                    aria-live="polite"
+            >
+                Найдено книг: 8
+            </p>
+
+            <p
+                    id="empty-message"
+                    hidden
+            >
+                По вашему запросу ничего не найдено.
+            </p>
+
+
+            <div class="book-grid">
+
+
+                <!-- Книга 1 -->
+                <article
+                        class="book-card"
+                        data-title="Чистый код"
+                        data-author="Роберт Мартин"
+                        data-category="programming"
+                        data-available="true"
+                >
+
+                    <figure>
+
+                        <img
+                                class="book-card__image"
+                                src="images/clean-code.jpg"
+                                width="360"
+                                height="520"
+                                alt="Обложка книги Чистый код"
+                        >
+
+                        <figcaption>
+                            Роберт Мартин
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h3>
+                        Чистый код
+                    </h3>
+
+                    <p>
+                        Направление: программирование
+                    </p>
+
+                    <p class="status">
+                        Доступна
+                    </p>
+
+                    <a
+                            class="button book-card__action"
+                            href="lab1.2.html"
+                    >
+                        Подробнее
+                    </a>
+
+                </article>
+
+
+                <!-- Книга 2 -->
+                <article
+                        class="book-card"
+                        data-title="Программист-прагматик"
+                        data-author="Эндрю Хант Дэвид Томас"
+                        data-category="programming"
+                        data-available="true"
+                >
+
+                    <figure>
+
+                        <img
+                                class="book-card__image"
+                                src="images/pragmatic-programmer.jpg"
+                                width="360"
+                                height="520"
+                                alt="Обложка книги Программист-прагматик"
+                        >
+
+                        <figcaption>
+                            Эндрю Хант, Дэвид Томас
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h3>
+                        Программист-прагматик
+                    </h3>
+
+                    <p>
+                        Направление: программирование
+                    </p>
+
+                    <p class="status">
+                        Доступна
+                    </p>
+
+                    <a
+                            class="button book-card__action"
+                            href="lab1.2.html"
+                    >
+                        Подробнее
+                    </a>
+
+                </article>
+
+
+                <!-- Книга 3 -->
+                <article
+                        class="book-card"
+                        data-title="JavaScript Подробное руководство"
+                        data-author="Дэвид Флэнаган"
+                        data-category="javascript"
+                        data-available="true"
+                >
+
+                    <figure>
+
+                        <img
+                                class="book-card__image"
+                                src="images/javascript.jpg"
+                                width="360"
+                                height="520"
+                                alt="Обложка книги JavaScript Подробное руководство"
+                        >
+
+                        <figcaption>
+                            Дэвид Флэнаган
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h3>
+                        JavaScript. Подробное руководство
+                    </h3>
+
+                    <p>
+                        Направление: JavaScript
+                    </p>
+
+                    <p class="status">
+                        Доступна
+                    </p>
+
+                    <a
+                            class="button book-card__action"
+                            href="lab1.2.html"
+                    >
+                        Подробнее
+                    </a>
+
+                </article>
+
+
+                <!-- Книга 4 -->
+                <article
+                        class="book-card"
+                        data-title="Изучаем Python"
+                        data-author="Марк Лутц"
+                        data-category="python"
+                        data-available="true"
+                >
+
+                    <figure>
+
+                        <img
+                                class="book-card__image"
+                                src="images/python.webp"
+                                width="360"
+                                height="520"
+                                alt="Обложка книги Изучаем Python"
+                        >
+
+                        <figcaption>
+                            Марк Лутц
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h3>
+                        Изучаем Python
+                    </h3>
+
+                    <p>
+                        Направление: Python
+                    </p>
+
+                    <p class="status">
+                        Доступна
+                    </p>
+
+                    <a
+                            class="button book-card__action"
+                            href="lab1.2.html"
+                    >
+                        Подробнее
+                    </a>
+
+                </article>
+
+
+                <!-- Книга 5 -->
+                <article
+                        class="book-card"
+                        data-title="Грокаем алгоритмы"
+                        data-author="Адитья Бхаргава"
+                        data-category="algorithms"
+                        data-available="true"
+                >
+
+                    <figure>
+
+                        <img
+                                class="book-card__image"
+                                src="images/algorithms.webp"
+                                width="360"
+                                height="520"
+                                alt="Обложка книги Грокаем алгоритмы"
+                        >
+
+                        <figcaption>
+                            Адитья Бхаргава
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h3>
+                        Грокаем алгоритмы
+                    </h3>
+
+                    <p>
+                        Направление: алгоритмы
+                    </p>
+
+                    <p class="status">
+                        Доступна
+                    </p>
+
+                    <a
+                            class="button book-card__action"
+                            href="lab1.2.html"
+                    >
+                        Подробнее
+                    </a>
+
+                </article>
+
+
+                <!-- Книга 6 -->
+                <article
+                        class="book-card"
+                        data-title="HTML и CSS"
+                        data-author="Джон Дакетт"
+                        data-category="web"
+                        data-available="true"
+                >
+
+                    <figure>
+
+                        <img
+                                class="book-card__image"
+                                src="images/html-css.webp"
+                                width="360"
+                                height="520"
+                                alt="Обложка книги HTML и CSS"
+                        >
+
+                        <figcaption>
+                            Джон Дакетт
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h3>
+                        HTML и CSS
+                    </h3>
+
+                    <p>
+                        Направление: веб-разработка
+                    </p>
+
+                    <p class="status">
+                        Доступна
+                    </p>
+
+                    <a
+                            class="button book-card__action"
+                            href="lab1.2.html"
+                    >
+                        Подробнее
+                    </a>
+
+                </article>
+
+
+                <!-- Книга 7 -->
+                <article
+                        class="book-card"
+                        data-title="Pro Git"
+                        data-author="Скотт Чакон Бен Штрауб"
+                        data-category="git"
+                        data-available="false"
+                >
+
+                    <figure>
+
+                        <img
+                                class="book-card__image"
+                                src="images/git.jpg"
+                                width="360"
+                                height="520"
+                                alt="Обложка книги Pro Git"
+                        >
+
+                        <figcaption>
+                            Скотт Чакон, Бен Штрауб
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h3>
+                        Pro Git
+                    </h3>
+
+                    <p>
+                        Направление: Git
+                    </p>
+
+                    <p class="status">
+                        Выдана
+                    </p>
+
+                    <button
+                            class="button book-card__action"
+                            type="button"
+                            disabled
+                    >
+                        Недоступна
+                    </button>
+
+                </article>
+
+
+                <!-- Книга 8 -->
+                <article
+                        class="book-card"
+                        data-title="Базы данных"
+                        data-author="Томас Коннолли Каролин Бегг"
+                        data-category="database"
+                        data-available="true"
+                >
+
+                    <figure>
+
+                        <img
+                                class="book-card__image"
+                                src="images/database.webp"
+                                width="360"
+                                height="520"
+                                alt="Обложка книги Базы данных"
+                        >
+
+                        <figcaption>
+                            Томас Коннолли, Каролин Бегг
+                        </figcaption>
+
+                    </figure>
+
+
+                    <h3>
+                        Базы данных
+                    </h3>
+
+                    <p>
+                        Направление: базы данных
+                    </p>
+
+                    <p class="status">
+                        Доступна
+                    </p>
+
+                    <a
+                            class="button book-card__action"
+                            href="lab1.2.html"
+                    >
+                        Подробнее
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- Информация -->
+    <aside class="info-box">
+
+        <h2>О каталоге</h2>
+
+        <p>
+            В каталоге собраны книги по программированию,
+            веб-разработке, алгоритмам, Git и базам данных.
+            Используйте поиск и фильтры, чтобы быстрее найти
+            нужную книгу.
+        </p>
+
+    </aside>
+
+</main>
+
+
+<!-- Подвал -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        BookNest — библиотека книг по программированию
+
+    </div>
+
+</footer>
+
+
+<!-- JavaScript -->
+<script src="scripts/catalog.js"></script>
+
+</body>
+
+</html>

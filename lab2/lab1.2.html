@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookNest — Чистый код</title>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+
+<body class="page">
+
+<!-- Шапка сайта -->
+<header class="site-header">
+
+    <div class="container site-header__inner">
+
+        <strong class="brand">
+            BookNest
+        </strong>
+
+        <nav class="nav" aria-label="Основная навигация">
+
+            <a class="nav__link" href="lab1.html">
+                Каталог
+            </a>
+
+            <a class="nav__link" href="lab1.2.html">
+                Книга
+            </a>
+
+            <a class="nav__link" href="lab1.3.html">
+                Выдача
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- Основное содержимое -->
+<main class="container page__main">
+
+    <h1>Чистый код</h1>
+
+    <article class="book-detail">
+
+        <!-- Обложка -->
+        <figure class="content-card">
+
+            <img
+                    class="detail-image"
+                    src="images/clean-code.jpg"
+                    width="480"
+                    height="700"
+                    alt="Обложка книги Чистый код"
+            >
+
+            <figcaption>
+                Роберт Мартин
+            </figcaption>
+
+        </figure>
+
+
+        <div class="detail-content">
+
+            <!-- Описание -->
+            <section class="content-card">
+
+                <h2>Описание</h2>
+
+                <p>
+                    Книга посвящена принципам написания понятного,
+                    структурированного и поддерживаемого программного кода.
+                    Рассматриваются именование переменных и функций,
+                    организация классов, обработка ошибок и улучшение
+                    структуры программ.
+                </p>
+
+            </section>
+
+
+            <!-- Информация о книге -->
+            <section class="content-card">
+
+                <h2>Сведения о книге</h2>
+
+                <dl class="details">
+
+                    <dt>Автор</dt>
+                    <dd>Роберт Мартин</dd>
+
+                    <dt>Направление</dt>
+                    <dd>Программирование</dd>
+
+                    <dt>Тематика</dt>
+                    <dd>Разработка программного обеспечения</dd>
+
+                    <dt>Язык</dt>
+                    <dd>Русский</dd>
+
+                    <dt>Статус</dt>
+                    <dd>
+                            <span class="status">
+                                Доступна
+                            </span>
+                    </dd>
+
+                </dl>
+
+            </section>
+
+
+            <!-- Темы -->
+            <section class="content-card">
+
+                <h2>Основные темы</h2>
+
+                <ul>
+                    <li>Читаемый код</li>
+                    <li>Правильное именование</li>
+                    <li>Функции</li>
+                    <li>Классы и объекты</li>
+                    <li>Обработка ошибок</li>
+                    <li>Рефакторинг</li>
+                    <li>Тестирование</li>
+                </ul>
+
+            </section>
+
+
+            <!-- Выдача -->
+            <section class="content-card">
+
+                <h2>Получить книгу</h2>
+
+                <p>
+                    Книга доступна для выдачи.
+                    Заполните данные читателя для оформления.
+                </p>
+
+                <a
+                        class="button"
+                        href="lab1.3.html"
+                >
+                    Оформить выдачу
+                </a>
+
+            </section>
+
+        </div>
+
+    </article>
+
+
+    <aside class="info-box">
+
+        <h2>Рекомендация</h2>
+
+        <p>
+            Книга подходит студентам, которые уже знают основы
+            программирования и хотят улучшить качество своего кода.
+        </p>
+
+    </aside>
+
+</main>
+
+
+<!-- Подвал -->
+<footer class="site-footer">
+
+    <div class="container">
+        BookNest — библиотека книг по программированию
+    </div>
+
+</footer>
+
+</body>
+
+</html>
