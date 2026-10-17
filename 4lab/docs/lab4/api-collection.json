@@ -1,0 +1,76 @@
+{
+    "info": {
+        "name": "BookNest Lab 4 - Open Library",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+
+    "item": [
+        {
+            "name": "Search programming books",
+
+            "request": {
+                "method": "GET",
+
+                "url": {
+                    "raw": "{{baseUrl}}/search.json?q=programming&page=1&limit=20",
+
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+
+                    "path": [
+                        "search.json"
+                    ],
+
+                    "query": [
+                        {
+                            "key": "q",
+                            "value": "programming"
+                        },
+
+                        {
+                            "key": "page",
+                            "value": "1"
+                        },
+
+                        {
+                            "key": "limit",
+                            "value": "20"
+                        }
+                    ]
+                }
+            }
+        },
+
+        {
+            "name": "Search page 2",
+
+            "request": {
+                "method": "GET",
+
+                "url": {
+                    "raw": "{{baseUrl}}/search.json?q=python&page=2&limit=20"
+                }
+            }
+        },
+
+        {
+            "name": "Work details",
+
+            "request": {
+                "method": "GET",
+
+                "url": {
+                    "raw": "{{baseUrl}}/works/OL45804W.json"
+                }
+            }
+        }
+    ],
+
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://openlibrary.org"
+        }
+    ]
+}

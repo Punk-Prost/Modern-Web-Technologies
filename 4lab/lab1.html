@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BookNest — Каталог</title>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+
+<body class="page">
+
+<header class="site-header">
+
+    <div class="container site-header__inner">
+
+        <strong class="brand">
+            BookNest
+        </strong>
+
+        <nav class="nav" aria-label="Навигация">
+
+            <a class="nav__link" href="lab1.html">
+                Каталог
+            </a>
+
+            <a class="nav__link" href="#wishlist">
+                Мой список
+                <span id="wishlist-count">0</span>
+            </a>
+
+            <a class="nav__link" href="lab1.2.html">
+                Книга
+            </a>
+
+            <a class="nav__link" href="lab1.3.html">
+                Выдача
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container page__main">
+
+    <h1>
+        Каталог книг
+    </h1>
+
+
+    <div class="catalog-layout">
+
+        <!-- Фильтры -->
+        <section class="filter-panel">
+
+            <h2>
+                Поиск
+            </h2>
+
+
+            <form
+                class="form"
+                id="filter-form"
+            >
+
+                <label for="search">
+                    Название или автор
+                </label>
+
+                <input
+                    class="form__control"
+                    id="search"
+                    name="search"
+                    type="search"
+                    minlength="2"
+                    maxlength="100"
+                    placeholder="Например: Python"
+                >
+
+
+                <label for="genre">
+                    Тематика
+                </label>
+
+                <select
+                    class="form__control"
+                    id="genre"
+                    name="genre"
+                >
+                    <option value="all">
+                        Все
+                    </option>
+
+                    <option value="programming">
+                        Программирование
+                    </option>
+
+                    <option value="javascript">
+                        JavaScript
+                    </option>
+
+                    <option value="python">
+                        Python
+                    </option>
+
+                    <option value="algorithms">
+                        Алгоритмы
+                    </option>
+
+                    <option value="databases">
+                        Базы данных
+                    </option>
+                </select>
+
+
+                <label for="sort">
+                    Сортировка
+                </label>
+
+                <select
+                    class="form__control"
+                    id="sort"
+                    name="sort"
+                >
+                    <option value="relevance">
+                        По релевантности
+                    </option>
+
+                    <option value="new">
+                        Сначала новые
+                    </option>
+
+                    <option value="title">
+                        Название А–Я
+                    </option>
+
+                    <option value="rating">
+                        По рейтингу
+                    </option>
+                </select>
+
+
+                <label class="check">
+
+                    <input
+                        id="available"
+                        type="checkbox"
+                    >
+
+                    Только доступные
+                </label>
+
+
+                <button
+                    class="button"
+                    type="submit"
+                >
+                    Найти
+                </button>
+
+
+                <button
+                    class="button button--secondary"
+                    id="reset-filters"
+                    type="button"
+                >
+                    Сбросить
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Результаты -->
+        <section>
+
+            <h2>
+                Книги
+            </h2>
+
+
+            <!-- LOADING -->
+            <div
+                class="app-state"
+                id="loading-state"
+                hidden
+            >
+                <div class="spinner"></div>
+
+                <p>
+                    Загружаем книги...
+                </p>
+            </div>
+
+
+            <!-- ERROR -->
+            <div
+                class="app-state error-box"
+                id="error-state"
+                hidden
+            >
+
+                <h3>
+                    Ошибка загрузки
+                </h3>
+
+                <p id="error-message">
+                </p>
+
+                <button
+                    class="button"
+                    id="retry-button"
+                    type="button"
+                >
+                    Повторить
+                </button>
+
+            </div>
+
+
+            <!-- EMPTY -->
+            <div
+                class="app-state empty-state"
+                id="empty-state"
+                hidden
+            >
+
+                <h3>
+                    Книги не найдены
+                </h3>
+
+                <p id="empty-message">
+                    Попробуйте изменить запрос.
+                </p>
+
+            </div>
+
+
+            <!-- SUCCESS -->
+            <div
+                id="success-state"
+                hidden
+            >
+
+                <p
+                    id="result-count"
+                    aria-live="polite"
+                >
+                Найдено: 0
+                </p>
+
+
+                <div
+                    class="book-grid"
+                    id="book-list"
+                >
+                </div>
+
+
+                <nav
+                    class="pagination"
+                    aria-label="Страницы результатов"
+                >
+
+                    <button
+                        class="button button--secondary"
+                        id="previous-page"
+                        type="button"
+                    >
+                        ← Назад
+                    </button>
+
+
+                    <span id="page-info">
+                        Страница 1
+                    </span>
+
+
+                    <button
+                        class="button button--secondary"
+                        id="next-page"
+                        type="button"
+                    >
+                        Вперёд →
+                    </button>
+
+                </nav>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- WISHLIST -->
+    <section
+        class="wishlist-section"
+        id="wishlist"
+    >
+
+        <div class="section-header">
+
+            <h2>
+                Мой список
+            </h2>
+
+            <span
+                class="wishlist-badge"
+                id="wishlist-total"
+            >
+                0
+            </span>
+
+        </div>
+
+
+        <p id="wishlist-empty">
+            Здесь пока нет книг.
+        </p>
+
+
+        <div
+            class="book-grid"
+            id="wishlist-list"
+        >
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container">
+        BookNest — Open Library API
+    </div>
+
+</footer>
+
+
+<script
+    type="module"
+    src="./main.js"
+></script>
+
+</body>
+
+</html>

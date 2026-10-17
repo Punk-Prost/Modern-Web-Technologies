@@ -1,0 +1,231 @@
+/* =========================
+   СТРАНИЦА
+   ========================= */
+
+.page {
+    display: flex;
+
+    min-height: 100vh;
+
+    flex-direction: column;
+}
+
+
+/* =========================
+   КОНТЕЙНЕР
+   ========================= */
+
+.container {
+    width:
+        min(
+            calc(
+                100% - var(--space-4) * 2
+            ),
+            var(--container-max)
+        );
+
+    margin-inline: auto;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.page__main {
+    display: grid;
+
+    flex: 1;
+
+    gap: var(--space-6);
+
+    padding-block:
+        var(--space-6);
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header__inner {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: var(--space-4);
+
+    padding-block:
+        var(--space-4);
+}
+
+
+/* =========================
+   NAV
+   ========================= */
+
+.nav {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+}
+
+
+/* =========================
+   КАТАЛОГ
+   ========================= */
+
+.catalog-layout {
+    display: grid;
+
+    gap: var(--space-5);
+}
+
+
+/* =========================
+   СЕТКА КНИГ
+   ========================= */
+
+.book-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                min(100%, 15rem),
+                1fr
+            )
+        );
+
+    gap: var(--space-5);
+}
+
+
+/* =========================
+   КАРТОЧКА КНИГИ
+   ========================= */
+
+.book-detail {
+    display: grid;
+
+    gap: var(--space-5);
+}
+
+
+.detail-content {
+    display: grid;
+
+    align-content: start;
+
+    gap: var(--space-4);
+}
+
+
+/* =========================
+   ФОРМА ВЫДАЧИ
+   ========================= */
+
+.form-layout {
+    display: grid;
+
+    gap: var(--space-5);
+}
+
+
+.actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-3);
+}
+
+
+/* =========================
+   WISHLIST
+   ========================= */
+
+.wishlist-section {
+    display: grid;
+
+    gap: var(--space-5);
+}
+
+
+.section-header {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: var(--space-3);
+}
+
+
+/* =========================
+   ПЛАНШЕТ 768px
+   ========================= */
+
+@media (min-width: 48rem) {
+
+    .site-header__inner {
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content:
+            space-between;
+    }
+
+
+    .book-detail {
+        grid-template-columns:
+            minmax(15rem, 1fr)
+            minmax(0, 2fr);
+
+        align-items: start;
+    }
+
+
+    .form-layout {
+        grid-template-columns:
+            minmax(14rem, 1fr)
+            minmax(0, 2fr);
+
+        align-items: start;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+   ========================= */
+
+@media (min-width: 75rem) {
+
+    .catalog-layout {
+        grid-template-columns:
+            minmax(14rem, 0.28fr)
+            minmax(0, 1fr);
+
+        align-items: start;
+    }
+
+
+    .filter-panel {
+        position: sticky;
+
+        top: var(--space-4);
+    }
+
+}

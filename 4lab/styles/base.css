@@ -1,0 +1,162 @@
+/* =========================
+   СБРОС
+   ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    color-scheme: light dark;
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-width: 0;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    overflow-x: hidden;
+
+    font-family: var(--font-family);
+
+    font-size: var(--font-size-base);
+
+    line-height: var(--line-height);
+
+    color: var(--color-text);
+
+    background-color: var(--color-bg);
+}
+
+
+/* =========================
+   ИЗОБРАЖЕНИЯ
+   ========================= */
+
+img {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+}
+
+
+/* =========================
+   ССЫЛКИ
+   ========================= */
+
+a {
+    color: var(--color-primary);
+}
+
+
+/* =========================
+   ЭЛЕМЕНТЫ ФОРМ
+   ========================= */
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+button,
+input,
+select,
+textarea,
+a {
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+
+/* =========================
+   ФОКУС
+   ========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline:
+        0.2rem solid
+        var(--color-focus);
+
+    outline-offset:
+        0.2rem;
+}
+
+
+/* =========================
+   ЗАГОЛОВКИ
+   ========================= */
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+
+    color: var(--color-text);
+}
+
+
+h1 {
+    font-size:
+        var(--font-size-title);
+}
+
+
+p,
+figure {
+    margin-block-start: 0;
+}
+
+
+/* =========================
+   HIDDEN
+   ========================= */
+
+[hidden] {
+    display: none;
+}
+
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms;
+
+        animation-duration: 0.01ms;
+
+        animation-iteration-count: 1;
+    }
+
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BookNest — Книга</title>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+
+<body class="page">
+
+<header class="site-header">
+
+    <div class="container site-header__inner">
+
+        <strong class="brand">
+            BookNest
+        </strong>
+
+        <nav
+            class="nav"
+            aria-label="Основная навигация"
+        >
+
+            <a
+                class="nav__link"
+                href="lab1.html"
+            >
+                Каталог
+            </a>
+
+            <a
+                class="nav__link"
+                href="lab1.2.html"
+            >
+                Книга
+            </a>
+
+            <a
+                class="nav__link"
+                href="lab1.3.html"
+            >
+                Выдача
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container page__main">
+
+    <!-- Загрузка -->
+    <section
+        class="app-state"
+        id="detail-loading"
+    >
+
+        <div class="spinner"></div>
+
+        <p>
+            Загружаем информацию о книге...
+        </p>
+
+    </section>
+
+
+    <!-- Ошибка -->
+    <section
+        class="error-box"
+        id="detail-error"
+        hidden
+    >
+
+        <h1>
+            Не удалось загрузить книгу
+        </h1>
+
+        <p id="detail-error-message">
+        </p>
+
+        <a
+            class="button"
+            href="lab1.html"
+        >
+            Вернуться в каталог
+        </a>
+
+    </section>
+
+
+    <!-- Книга -->
+    <article
+        class="book-detail"
+        id="detail-content"
+        hidden
+    >
+
+        <figure class="content-card">
+
+            <img
+                class="detail-image"
+                id="detail-image"
+                src=""
+                width="480"
+                height="700"
+                alt=""
+            >
+
+            <figcaption id="detail-caption">
+                Open Library
+            </figcaption>
+
+        </figure>
+
+
+        <div class="detail-content">
+
+            <section class="content-card">
+
+                <h1 id="detail-title">
+                </h1>
+
+                <p class="book-rating">
+
+                    Рейтинг:
+
+                    <span id="detail-rating">
+                    </span>
+
+                </p>
+
+            </section>
+
+
+            <section class="content-card">
+
+                <h2>
+                    Описание
+                </h2>
+
+                <p id="detail-description">
+                </p>
+
+            </section>
+
+
+            <section class="content-card">
+
+                <h2>
+                    Темы
+                </h2>
+
+                <ul id="detail-subjects">
+                </ul>
+
+            </section>
+
+
+            <section class="content-card">
+
+                <h2>
+                    Получить книгу
+                </h2>
+
+                <p>
+                    Для оформления выдачи перейдите
+                    к форме читателя.
+                </p>
+
+                <a
+                    class="button"
+                    id="issue-book-link"
+                    href="#"
+                >
+                    Оформить выдачу
+                </a>
+
+            </section>
+
+        </div>
+
+    </article>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="container">
+        BookNest — Open Library
+    </div>
+
+</footer>
+
+
+<script
+    type="module"
+    src="./detail.js"
+></script>
+
+</body>
+
+</html>
